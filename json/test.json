@@ -1,0 +1,22 @@
+[
+    {
+        "clothName":"大衣",
+        "price":870,
+        "url":"../images/1129beats_02.jpg"
+    },
+    {
+        "clothName":"裙子",
+        "price":500,
+        "url":"../images/1129beats_01.jpg"
+    },
+    {
+        "clothName":"裤子",
+        "price":1000,
+        "url":"../images/1128goods_b1.jpg"
+    },
+    {
+        "clothName":"毛衣",
+        "price":600,
+        "url":"../images/1128goods_a3.jpg"
+    }
+]

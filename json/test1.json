@@ -1,0 +1,18 @@
+[
+    {
+        "bookName":"java",
+        "price":20
+    },
+    {
+        "bookName":"javascript",
+        "price":25
+    },
+    {
+        "bookName":"c++",
+        "price":35
+    }
+    , {
+    "bookName":"hello",
+    "price":500
+}
+]

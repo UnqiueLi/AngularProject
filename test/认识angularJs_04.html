@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js" ></script>
+</head>
+<body ng-app="" ng-init="name='xianming';arr=[1,2,3,4,5];obj={'name':'xianghong','age':15}">
+{{name}}
+<p>{{arr[0]}}</p>
+<p>{{arr[1]}}</p>
+<p>{{arr[2]}}</p>
+<p>{{arr[3]}}</p>
+<p>{{arr[4]}}</p>
+<p>{{obj.name}}:{{obj.age}}</p>
+<script>
+    /*
+    es6模版
+     */
+    var a="hello";
+    var b="angular";
+    var c= `${a},${b}`;
+    console.log(c);
+</script>
+</body>
+</html>

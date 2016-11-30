@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+    <div ng-app="myapp">
+        <div ng-controller="mycontroller">
+            <ul>
+                <li ng-repeat="x in arr | orderBy:'price' | filter:{'bookName':name}">{{x.bookName}}:{{x.price | currency:'￥'}}</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("myapp",[]);
+        app.controller("mycontroller",function($scope){
+            $scope.arr=[
+                {
+                    "bookName":"java",
+                    "price":15
+                },
+                {
+                    "bookName":"c++",
+                    "price":20
+                },
+                {
+                    "bookName":"javascript",
+                    "price":50
+                },
+                {
+                    "bookName":"mysql",
+                    "price":10
+                }
+            ]
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+<div ng-app="app" ng-init="name='xiaoming';arr=[0,1,2,3]">
+{{name}}
+    <li ng-repeat="x in arr">{{x.name}}:{{x.age}}</li>
+</div>
+<script>
+    var app=angular.module("app",[]);
+</script>
+</body>
+</html>

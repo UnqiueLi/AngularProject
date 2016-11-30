@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="mycontroller">
+            <p></p>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("mycontroller",["$scope",function($scope){
+            var a="0";
+            var b=0;
+            console.log(a==b); //true
+            console.log(Object.is(a,b)); //false
+            console.log(angular.equals(a,b)); //false
+            a={name:"xiaoming"};
+            b={name:"xiaoming"};
+            console.log(a==b); //比较地址 false
+            console.log(Object.is(a,b));//比较属性 false
+
+            var c={name:"xiaohong"};
+            var d={age:16};
+            var e=angular.extend(c,d);//两个参数 前者继承后者
+            console.log(e);//返回值得继承者
+            console.log(c);//继承者拥有被继承者的所有属性
+            console.log(d);//被继承的不变
+        }])
+    </script>
+</body>
+</html>

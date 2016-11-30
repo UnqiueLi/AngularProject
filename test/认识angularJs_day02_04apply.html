@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+<div ng-app="app">
+    <div ng-controller="ctrl">
+        <p>{{name}}</p>
+    </div>
+</div>
+<script>
+    var app=angular.module("app",[]);
+    /*
+    方法一
+     app.controller("ctrl",["$scope",function($scope){
+     $scope.name="张山";
+     setTimeout(function(){
+     $scope.$apply(function(){
+     $scope.name="李四"
+     })
+     },1000)
+     }])
+     */
+
+    app.controller("ctrl",["$scope","$timeout",function($scope,$timeout){
+        $scope.name="张山";
+        $timeout(function(){
+            $scope.$apply(function(){
+                $scope.name="李四"
+            })
+        },1000,false)
+    }])
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+<div ng-app="app">
+    <div ng-controller="mycontroller">
+        <p></p>
+    </div>
+</div>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("mycontroller",["$scope",function($scope){
+        var obj={"name":"xiaoming","age":52,"sex":"nv","speed":500};
+        console.log(angular.isObject(obj));
+        var str=angular.toJson(obj);
+        console.log(JSON.stringify(obj));
+        console.log(angular.isString(str)); // json数据格式的字符串
+        console.log(JSON.parse(str));
+        console.log(angular.fromJson(str));
+    }])
+</script>
+</body>
+</html>

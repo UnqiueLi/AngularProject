@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+<div ng-app="app">
+    <div ng-controller="firstCtrl">
+        <p></p>
+    </div>
+</div>
+<script>
+    var app=angular.module("app",[]);
+    app.controller("firstCtrl",["$scope",function($scope){
+        /*
+        forEach遍历
+         */
+        var arr=[1,2,3,4,5];
+        var obj={name:"xiaoming",age:20};
+        angular.forEach(arr,function(val,key){
+            console.log(key+"-------------"+val);
+        })
+        angular.forEach(obj,function(val,key){
+            console.log(key+"---------"+val);
+
+        })
+
+        /*
+        bind绑定上下文
+         */
+        var obj1={name:"xiaohua"};
+        var f =angular.bind(obj1,function(age){
+            $scope.info=this.name+":"+age;
+            console.log($scope.info);
+        })
+        f(10);
+        console.log(obj1);
+    }])
+</script>
+</body>
+</html>

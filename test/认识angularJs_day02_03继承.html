@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+<div ng-app="app">
+    <div ng-controller="firstCtrl">
+        <p> {{name}}</p>
+        <p>{{age}}</p>
+        <p>{{speed}}</p>
+        <div ng-controller="secondCtrl">
+            <p> {{name}}</p>
+            <p>{{age}}</p>
+            <p>{{speed}}</p>
+         </div>
+    </div>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("firstCtrl",["$scope",function($scope){
+            $scope.name="花花";
+            $scope.age=45;
+            $scope.speed=500;
+        }])
+        app.controller("secondCtrl",["$scope",function($scope){
+
+        }])
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+    <div ng-app="myapp">
+        <div ng-controller="mycontroller">
+            <p>{{2+3}}</p>
+            <p>{{price*num}}</p>
+            <p>{{obj.firstName}}.{{obj.lastName }}</p>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("myapp",[]);
+        app.controller("mycontroller",function($scope,$http){
+            $scope.name="xiaoming";
+            $scope.price=10;
+            $scope.num=10;
+            $scope.obj={
+                firstName:"John",
+                lastName:"Smith"
+            }
+        })
+    </script>
+</body>
+</html>

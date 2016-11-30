@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+    <div ng-app="app">
+        <div ng-controller="first">
+            <p>名字是{{name}}</p>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("app",[]);
+        app.controller("first",["$scope","$http",function($scope,$http){
+            $scope.name="john";
+            var url="../json/test1.json";
+            $http.get(url).success(function(data,status,headers,config){
+                console.log(data);
+                console.log(status);
+                console.log(headers);
+                console.log(config);
+            }).error(function(data,status,headers,config){
+                console.log(data);
+                console.log(status);
+                console.log(headers);
+                console.log(config);
+            })
+        }])
+
+        /*
+        ajax
+         var xhr=new XMLHttpRequest();
+         xhr.open("get",url,true);
+         xhr.send();
+         xhr.onreadystatechange=function(){
+         if(xhr.readyState == 4 && xhr.status==200){
+         var str=xhr.responseText;
+         console.log(str);
+         }
+         }
+         */
+
+    </script>
+</body>
+</html>

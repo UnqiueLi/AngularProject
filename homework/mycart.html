@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="mycart.css"/>
+    <script src="../js/angular.js"></script>
+</head>
+<body>
+    <div  ng-app="app">
+        <div ng-controller="mycontroller">
+            <table id="cartTable">
+                <thead>
+                <tr>
+                    <th><label><input class="check-all check" type="checkbox"/>&nbsp;全选</label></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in items">
+                    <td class="checkbox" ><input class="check-one check" type="checkbox"/></td>
+                    <td class="goods"><img src="{{x.url}}" alt=""/><span>{{x.clothName}}</span></td>
+                    <td class="price" >{{x.price}}</td>
+                    <td class="count">
+                        <span class="reduce"></span>
+                        <input class="count-input" type="text" value="1"/>
+                        <span class="add">+</span></td>
+                    <td class="subtotal">5999.88</td>
+                    <td class="operation"><span class="delete">删除</span></td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("app",[]);
+         app.controller("mycontroller",["$scope","$http",function($scope,$http){
+               var url="../json/test.json";
+             $http.get(url).success(function(data,status,headers,config){
+               $scope.items=data;
+             }).error(function(data,status,headers,config){
+                 console.log("输出数据报错");
+             })
+        }])
+
+
+
+    </script>
+</body>
+</html>
